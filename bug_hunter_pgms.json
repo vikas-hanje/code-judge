@@ -1,0 +1,88 @@
+{
+  "bughunter_problems": [
+    {
+      "slug": "sum-two-numbers-python",
+      "title": "Sum of Two Numbers",
+      "statement": "## Sum of Two Numbers\n\nWrite a program that reads two integers and prints their sum.\n\n**Your task:** Fix the buggy code so it correctly computes the sum.\n\n**Input:** \n- Two integers separated by space\n\n**Output:**\n- Single integer (sum)\n\n**Example:**\n- Input: 3 4\n- Output: 7",
+      "language_id": 71,
+      "buggy_code": "# Buggy code\nnums = input().split()\na = nums[0]\nb = nums[1]\nprint(a - b)  # BUG: using subtraction and strings not converted to int",
+      "difficulty": "easy",
+      "testcases": [
+        { "input": "3 4\n", "expected_output": "7\n", "is_sample": true },
+        { "input": "10 15\n", "expected_output": "25\n", "is_sample": false }
+      ]
+    },
+    {
+      "slug": "factorial-python",
+      "title": "Factorial of a Number",
+      "statement": "## Factorial\n\nGiven a number n, calculate n!.\n\n**Your task:** Fix the code to compute factorial using recursion.\n\n**Input:**\n- A single integer n (0 ≤ n ≤ 10)\n\n**Output:**\n- Factorial value\n\n**Example:**\n- Input: 5\n- Output: 120",
+      "language_id": 71,
+      "buggy_code": "def fact(n):\n    if n == 0:\n        return 0  # BUG: should return 1\n    return n * fact(n - 1)\n\nn = int(input())\nprint(fact(n))",
+      "difficulty": "easy",
+      "testcases": [
+        { "input": "5\n", "expected_output": "120\n", "is_sample": true },
+        { "input": "0\n", "expected_output": "1\n", "is_sample": false }
+      ]
+    },
+    {
+      "slug": "reverse-string-python",
+      "title": "Reverse a String",
+      "statement": "## Reverse String\n\nRead a string and print it reversed.\n\n**Input:**\n- A string\n\n**Output:**\n- Reversed string\n\n**Example:**\n- Input: hello\n- Output: olleh",
+      "language_id": 71,
+      "buggy_code": "s = input()\nprint(s[0:])  # BUG: not reversed",
+      "difficulty": "easy",
+      "testcases": [
+        { "input": "hello\n", "expected_output": "olleh\n", "is_sample": true },
+        { "input": "world\n", "expected_output": "dlrow\n", "is_sample": false }
+      ]
+    },
+    {
+      "slug": "prime-check-python",
+      "title": "Check Prime Number",
+      "statement": "## Prime Number Check\n\nGiven a number n, check if it's prime.\n\n**Input:**\n- A single integer\n\n**Output:**\n- 'YES' if prime, 'NO' otherwise\n\n**Example:**\n- Input: 7\n- Output: YES",
+      "language_id": 71,
+      "buggy_code": "n = int(input())\nif n % 2 == 0:\n    print(\"YES\")  # BUG: assumes all even are prime\nelse:\n    print(\"NO\")",
+      "difficulty": "medium",
+      "testcases": [
+        { "input": "7\n", "expected_output": "YES\n", "is_sample": true },
+        { "input": "8\n", "expected_output": "NO\n", "is_sample": false }
+      ]
+    },
+    {
+      "slug": "fibonacci-python",
+      "title": "Nth Fibonacci Number",
+      "statement": "## Fibonacci Number\n\nGiven n, print the nth Fibonacci number (0-indexed).\n\n**Input:**\n- An integer n\n\n**Output:**\n- nth Fibonacci number\n\n**Example:**\n- Input: 5\n- Output: 5",
+      "language_id": 71,
+      "buggy_code": "def fib(n):\n    if n <= 1:\n        return 1  # BUG: should return n\n    return fib(n-1) + fib(n-2)\n\nn = int(input())\nprint(fib(n))",
+      "difficulty": "medium",
+      "testcases": [
+        { "input": "5\n", "expected_output": "5\n", "is_sample": true },
+        { "input": "7\n", "expected_output": "13\n", "is_sample": false }
+      ]
+    },
+    {
+      "slug": "palindrome-check-python",
+      "title": "Check Palindrome String",
+      "statement": "## Palindrome Check\n\nCheck if a string is a palindrome.\n\n**Input:**\n- A string\n\n**Output:**\n- 'YES' if palindrome, else 'NO'\n\n**Example:**\n- Input: madam\n- Output: YES",
+      "language_id": 71,
+      "buggy_code": "s = input()\nif s == s.upper():  # BUG: wrong check\n    print(\"YES\")\nelse:\n    print(\"NO\")",
+      "difficulty": "medium",
+      "testcases": [
+        { "input": "madam\n", "expected_output": "YES\n", "is_sample": true },
+        { "input": "hello\n", "expected_output": "NO\n", "is_sample": false }
+      ]
+    },
+    {
+      "slug": "gcd-python",
+      "title": "Greatest Common Divisor",
+      "statement": "## GCD\n\nFind the GCD of two numbers.\n\n**Input:**\n- Two integers\n\n**Output:**\n- Single integer (gcd)\n\n**Example:**\n- Input: 12 18\n- Output: 6",
+      "language_id": 71,
+      "buggy_code": "import math\nx, y = map(int, input().split())\nprint(x*y)  # BUG: printing product",
+      "difficulty": "hard",
+      "testcases": [
+        { "input": "12 18\n", "expected_output": "6\n", "is_sample": true },
+        { "input": "100 25\n", "expected_output": "25\n", "is_sample": false }
+      ]
+    }
+  ]
+}
