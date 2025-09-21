@@ -7,6 +7,7 @@ import { useTheme } from '../contexts/ThemeContext';
 export default function NavBar() {
   const router = useRouter();
   const [email, setEmail] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -65,18 +66,128 @@ export default function NavBar() {
               </svg>
             )}
           </button>
-          {email ? (
-            <>
-              <Link href="/profile" className="text-sm hover:text-indigo-600 transition-colors" style={{ color: 'rgb(var(--fg) / 0.8)' }}>Profile</Link>
-              <button onClick={logout} className="btn btn-secondary">Logout</button>
-            </>
-          ) : (
-            <>
-              <Link href="/login" className="btn btn-primary">Login</Link>
-            </>
-          )}
+          
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-3">
+            {email ? (
+              <>
+                <Link href="/profile" className="text-sm transition-all duration-200 hover:scale-105" style={{ color: 'rgb(var(--muted))' }} onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(var(--accent))'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(var(--muted))'}>Profile</Link>
+                <button onClick={logout} className="btn btn-secondary">Logout</button>
+              </>
+            ) : (
+              <>
+                <Link href="/login" className="btn btn-primary">Login</Link>
+              </>
+            )}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden rounded-md p-2 transition-all duration-200"
+            style={{ 
+              color: 'rgb(var(--muted))',
+              backgroundColor: 'transparent'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgb(var(--border) / 0.3)';
+              e.currentTarget.style.color = 'rgb(var(--accent))';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.color = 'rgb(var(--muted))';
+            }}
+            title="Menu"
+          >
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t" style={{ backgroundColor: 'rgb(var(--nav-bg))', borderColor: 'rgb(var(--border))' }}>
+          <div className="px-4 py-3 space-y-3">
+            <Link 
+              href="/problems" 
+              className="block text-sm transition-colors py-2" 
+              style={{ color: 'rgb(var(--muted))' }}
+              onClick={() => setMobileMenuOpen(false)}
+              onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(var(--accent))'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(var(--muted))'}
+            >
+              Problems
+            </Link>
+            <Link 
+              href="/bughunter" 
+              className="block text-sm transition-colors py-2" 
+              style={{ color: 'rgb(var(--muted))' }}
+              onClick={() => setMobileMenuOpen(false)}
+              onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(var(--accent))'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(var(--muted))'}
+            >
+              Bug Hunter
+            </Link>
+            <Link 
+              href="/submissions" 
+              className="block text-sm transition-colors py-2" 
+              style={{ color: 'rgb(var(--muted))' }}
+              onClick={() => setMobileMenuOpen(false)}
+              onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(var(--accent))'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(var(--muted))'}
+            >
+              My Submissions
+            </Link>
+            <Link 
+              href="/leaderboard" 
+              className="block text-sm transition-colors py-2" 
+              style={{ color: 'rgb(var(--muted))' }}
+              onClick={() => setMobileMenuOpen(false)}
+              onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(var(--accent))'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(var(--muted))'}
+            >
+              Leaderboard
+            </Link>
+            
+            <div className="pt-3 border-t" style={{ borderColor: 'rgb(var(--border))' }}>
+              {email ? (
+                <>
+                  <Link 
+                    href="/profile" 
+                    className="block text-sm transition-colors py-2" 
+                    style={{ color: 'rgb(var(--muted))' }}
+                    onClick={() => setMobileMenuOpen(false)}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(var(--accent))'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(var(--muted))'}
+                  >
+                    Profile
+                  </Link>
+                  <button 
+                    onClick={() => { logout(); setMobileMenuOpen(false); }} 
+                    className="block w-full text-left text-sm transition-colors py-2" 
+                    style={{ color: 'rgb(var(--muted))' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(var(--accent))'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(var(--muted))'}
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <Link 
+                  href="/login" 
+                  className="block text-sm transition-colors py-2" 
+                  style={{ color: 'rgb(var(--accent))' }}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Login
+                </Link>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
