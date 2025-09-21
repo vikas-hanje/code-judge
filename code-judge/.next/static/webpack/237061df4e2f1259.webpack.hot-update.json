@@ -1,0 +1,1 @@
+{"c":["webpack"],"r":["pages/problems/[slug]"],"m":["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=D%3A%5Ccompiler%5Ccode-judge%5Csrc%5Cpages%5Cproblems%5C%5Bslug%5D.tsx&page=%2Fproblems%2F%5Bslug%5D!","./src/lib/languages.ts","./src/pages/problems/[slug].tsx"]}

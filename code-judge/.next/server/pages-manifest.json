@@ -1,0 +1,17 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/submissions": "pages/submissions.js",
+  "/problems/[slug]": "pages/problems/[slug].js",
+  "/problems": "pages/problems.js",
+  "/": "pages/index.js",
+  "/api/problems": "pages/api/problems.js",
+  "/api/problems/[slug]": "pages/api/problems/[slug].js",
+  "/api/problems/[slug]/status": "pages/api/problems/[slug]/status.js",
+  "/bughunter": "pages/bughunter.js",
+  "/api/bughunter/problems": "pages/api/bughunter/problems.js",
+  "/bughunter/[slug]": "pages/bughunter/[slug].js",
+  "/api/bughunter/problems/[slug]": "pages/api/bughunter/problems/[slug].js",
+  "/api/bughunter/problems/[slug]/status": "pages/api/bughunter/problems/[slug]/status.js"
+}
