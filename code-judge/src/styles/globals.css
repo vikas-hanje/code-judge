@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Modern Light Theme - Clean Blue-Gray */
+  --bg: 248 250 252;
+  --fg: 30 41 59;
+  --card-bg: 255 255 255;
+  --border: 203 213 225;
+  --input-bg: 255 255 255;
+  --nav-bg: 255 255 255;
+  --accent: 59 130 246;
+  --accent-hover: 37 99 235;
+  --success: 34 197 94;
+  --error: 239 68 68;
+  --warning: 245 158 11;
+  --muted: 100 116 139;
+}
+
+.dark {
+  /* Modern Dark Theme - Deep Purple-Blue */
+  --bg: 15 23 42;
+  --fg: 241 245 249;
+  --card-bg: 30 41 59;
+  --border: 51 65 85;
+  --input-bg: 51 65 85;
+  --nav-bg: 15 23 42;
+  --accent: 99 102 241;
+  --accent-hover: 129 140 248;
+  --success: 52 211 153;
+  --error: 248 113 113;
+  --warning: 251 191 36;
+  --muted: 148 163 184;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  color: rgb(var(--fg));
+  background-color: rgb(var(--bg));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/***** Small utility classes *****/
+.btn {
+  @apply inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium shadow-sm transition active:scale-[0.98];
+}
+.btn-primary {
+  background-color: rgb(var(--accent));
+  color: white;
+  @apply hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200;
+  border: 1px solid rgb(var(--accent));
+}
+.btn-primary:hover {
+  background-color: rgb(var(--accent-hover));
+  border-color: rgb(var(--accent-hover));
+  transform: translateY(-1px);
+}
+.btn-primary:focus {
+  --tw-ring-color: rgb(var(--accent) / 0.5);
+}
+.btn-secondary {
+  background-color: rgb(var(--card-bg));
+  color: rgb(var(--fg));
+  border: 1px solid rgb(var(--border));
+  @apply hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200;
+}
+.btn-secondary:hover {
+  background-color: rgb(var(--border) / 0.3);
+  transform: translateY(-1px);
+}
+.btn-secondary:focus {
+  --tw-ring-color: rgb(var(--accent) / 0.3);
+}
+.btn-disabled {
+  background-color: rgb(var(--muted) / 0.3);
+  color: rgb(var(--muted));
+  border: 1px solid rgb(var(--muted) / 0.3);
+  @apply cursor-not-allowed;
+}
+.input {
+  @apply block w-full rounded-md border px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-1 transition-all duration-200;
+  background-color: rgb(var(--input-bg));
+  border-color: rgb(var(--border));
+  color: rgb(var(--fg));
+}
+.input:focus {
+  border-color: rgb(var(--accent));
+  --tw-ring-color: rgb(var(--accent) / 0.3);
+}
+.label {
+  @apply mb-1 block text-sm font-medium;
+  color: rgb(var(--fg));
+}
+.card {
+  @apply rounded-lg border p-4 shadow-sm transition-colors;
+  background-color: rgb(var(--card-bg));
+  border-color: rgb(var(--border));
+}
+
+/* Monaco Editor dark theme support */
+.dark .monaco-editor {
+  background-color: rgb(30 41 59) !important;
+}
+
+/* Prose dark theme */
+.dark .prose {
+  @apply prose-invert;
+}

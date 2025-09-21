@@ -1,0 +1,28 @@
+{
+  "problems": [
+    {
+      "slug": "echo",
+      "title": "Echo",
+      "statement": "## Echo\n\nRead a single line from standard input and print it.\n\n### Constraints\n- Input length <= 10^4\n\n### Sample\nInput:\n```\nhello\n```\nOutput:\n```\nhello\n```",
+      "time_limit_ms": 2000,
+      "memory_limit_kb": 65536,
+      "testcases": [
+        { "input": "hello\n", "expected_output": "hello\n", "is_sample": true },
+        { "input": "42\n", "expected_output": "42\n", "is_sample": false },
+        { "input": "Code Judge!\n", "expected_output": "Code Judge!\n", "is_sample": false }
+      ]
+    },
+    {
+      "slug": "sum-a-b",
+      "title": "A + B",
+      "statement": "## A + B\n\nGiven two integers A and B (0 <= A, B <= 10^9) on one line, print their sum.\n\n### Sample\nInput:\n```\n3 5\n```\nOutput:\n```\n8\n```",
+      "time_limit_ms": 2000,
+      "memory_limit_kb": 65536,
+      "testcases": [
+        { "input": "3 5\n", "expected_output": "8\n", "is_sample": true },
+        { "input": "0 0\n", "expected_output": "0\n", "is_sample": false },
+        { "input": "100 1\n", "expected_output": "101\n", "is_sample": false }
+      ]
+    }
+  ]
+}
