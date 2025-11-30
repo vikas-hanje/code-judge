@@ -2,11 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/problems": "pages/problems.js",
-  "/problems/[slug]": "pages/problems/[slug].js",
-  "/submissions": "pages/submissions.js",
-  "/api/submissions": "pages/api/submissions.js",
-  "/api/problems": "pages/api/problems.js",
-  "/bughunter": "pages/bughunter.js",
-  "/api/bughunter/problems": "pages/api/bughunter/problems.js"
+  "/": "pages/index.js",
+  "/problems": "pages/problems.js"
 }

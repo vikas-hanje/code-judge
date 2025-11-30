@@ -1,0 +1,3 @@
+node scripts/ingest-bughunter.mjs --file path/to/bughunter-problems.json #bug hunter problems
+
+node scripts/ingest.mjs --file problems.js  #normal problems ex: node scripts/ingest.mjs --file d:\compiler\problems.js
